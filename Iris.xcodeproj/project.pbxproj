@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1545429D1DF9D36800BA104C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545429C1DF9D36800BA104C /* AppDelegate.swift */; };
+		154542A21DF9D36800BA104C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154542A01DF9D36800BA104C /* Main.storyboard */; };
+		154542A41DF9D36800BA104C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154542A31DF9D36800BA104C /* Assets.xcassets */; };
+		154542A71DF9D36800BA104C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154542A51DF9D36800BA104C /* LaunchScreen.storyboard */; };
+		154542B21DF9D36800BA104C /* IrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154542B11DF9D36800BA104C /* IrisTests.swift */; };
+		154542BD1DF9D36800BA104C /* IrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154542BC1DF9D36800BA104C /* IrisUITests.swift */; };
+		154542CB1DF9D3B300BA104C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154542CA1DF9D3B300BA104C /* CameraViewController.swift */; };
+		159674581E0736EC0026424C /* IrisCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159674571E0736EC0026424C /* IrisCamera.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		154542AE1DF9D36800BA104C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 154542911DF9D36800BA104C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154542981DF9D36800BA104C;
+			remoteInfo = Iris;
+		};
+		154542B91DF9D36800BA104C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 154542911DF9D36800BA104C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154542981DF9D36800BA104C;
+			remoteInfo = Iris;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		154542991DF9D36800BA104C /* Iris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1545429C1DF9D36800BA104C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		154542A11DF9D36800BA104C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		154542A31DF9D36800BA104C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		154542A61DF9D36800BA104C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		154542A81DF9D36800BA104C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154542AD1DF9D36800BA104C /* IrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		154542B11DF9D36800BA104C /* IrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisTests.swift; sourceTree = "<group>"; };
+		154542B31DF9D36800BA104C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154542B81DF9D36800BA104C /* IrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		154542BC1DF9D36800BA104C /* IrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisUITests.swift; sourceTree = "<group>"; };
+		154542BE1DF9D36800BA104C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154542CA1DF9D3B300BA104C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		159674571E0736EC0026424C /* IrisCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrisCamera.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		154542961DF9D36800BA104C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154542AA1DF9D36800BA104C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154542B51DF9D36800BA104C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		154542901DF9D36800BA104C = {
+			isa = PBXGroup;
+			children = (
+				1545429B1DF9D36800BA104C /* Iris */,
+				154542B01DF9D36800BA104C /* IrisTests */,
+				154542BB1DF9D36800BA104C /* IrisUITests */,
+				1545429A1DF9D36800BA104C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1545429A1DF9D36800BA104C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				154542991DF9D36800BA104C /* Iris.app */,
+				154542AD1DF9D36800BA104C /* IrisTests.xctest */,
+				154542B81DF9D36800BA104C /* IrisUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1545429B1DF9D36800BA104C /* Iris */ = {
+			isa = PBXGroup;
+			children = (
+				1545429C1DF9D36800BA104C /* AppDelegate.swift */,
+				154542CE1DF9D3D700BA104C /* Storyboards */,
+				154542CC1DF9D3BE00BA104C /* Camera */,
+				154542CF1DF9D77500BA104C /* Results */,
+				154542CD1DF9D3CA00BA104C /* Models */,
+				154542A31DF9D36800BA104C /* Assets.xcassets */,
+				154542A81DF9D36800BA104C /* Info.plist */,
+			);
+			path = Iris;
+			sourceTree = "<group>";
+		};
+		154542B01DF9D36800BA104C /* IrisTests */ = {
+			isa = PBXGroup;
+			children = (
+				154542B11DF9D36800BA104C /* IrisTests.swift */,
+				154542B31DF9D36800BA104C /* Info.plist */,
+			);
+			path = IrisTests;
+			sourceTree = "<group>";
+		};
+		154542BB1DF9D36800BA104C /* IrisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				154542BC1DF9D36800BA104C /* IrisUITests.swift */,
+				154542BE1DF9D36800BA104C /* Info.plist */,
+			);
+			path = IrisUITests;
+			sourceTree = "<group>";
+		};
+		154542CC1DF9D3BE00BA104C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				159674571E0736EC0026424C /* IrisCamera.swift */,
+				154542CA1DF9D3B300BA104C /* CameraViewController.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		154542CD1DF9D3CA00BA104C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		154542CE1DF9D3D700BA104C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				154542A51DF9D36800BA104C /* LaunchScreen.storyboard */,
+				154542A01DF9D36800BA104C /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		154542CF1DF9D77500BA104C /* Results */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Results;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		154542981DF9D36800BA104C /* Iris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154542C11DF9D36800BA104C /* Build configuration list for PBXNativeTarget "Iris" */;
+			buildPhases = (
+				154542951DF9D36800BA104C /* Sources */,
+				154542961DF9D36800BA104C /* Frameworks */,
+				154542971DF9D36800BA104C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Iris;
+			productName = Iris;
+			productReference = 154542991DF9D36800BA104C /* Iris.app */;
+			productType = "com.apple.product-type.application";
+		};
+		154542AC1DF9D36800BA104C /* IrisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154542C41DF9D36800BA104C /* Build configuration list for PBXNativeTarget "IrisTests" */;
+			buildPhases = (
+				154542A91DF9D36800BA104C /* Sources */,
+				154542AA1DF9D36800BA104C /* Frameworks */,
+				154542AB1DF9D36800BA104C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154542AF1DF9D36800BA104C /* PBXTargetDependency */,
+			);
+			name = IrisTests;
+			productName = IrisTests;
+			productReference = 154542AD1DF9D36800BA104C /* IrisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		154542B71DF9D36800BA104C /* IrisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154542C71DF9D36800BA104C /* Build configuration list for PBXNativeTarget "IrisUITests" */;
+			buildPhases = (
+				154542B41DF9D36800BA104C /* Sources */,
+				154542B51DF9D36800BA104C /* Frameworks */,
+				154542B61DF9D36800BA104C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154542BA1DF9D36800BA104C /* PBXTargetDependency */,
+			);
+			name = IrisUITests;
+			productName = IrisUITests;
+			productReference = 154542B81DF9D36800BA104C /* IrisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		154542911DF9D36800BA104C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = EricWang;
+				TargetAttributes = {
+					154542981DF9D36800BA104C = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3BE387NNQP;
+						ProvisioningStyle = Automatic;
+					};
+					154542AC1DF9D36800BA104C = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 154542981DF9D36800BA104C;
+					};
+					154542B71DF9D36800BA104C = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 154542981DF9D36800BA104C;
+					};
+				};
+			};
+			buildConfigurationList = 154542941DF9D36800BA104C /* Build configuration list for PBXProject "Iris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 154542901DF9D36800BA104C;
+			productRefGroup = 1545429A1DF9D36800BA104C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				154542981DF9D36800BA104C /* Iris */,
+				154542AC1DF9D36800BA104C /* IrisTests */,
+				154542B71DF9D36800BA104C /* IrisUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		154542971DF9D36800BA104C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154542A71DF9D36800BA104C /* LaunchScreen.storyboard in Resources */,
+				154542A41DF9D36800BA104C /* Assets.xcassets in Resources */,
+				154542A21DF9D36800BA104C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154542AB1DF9D36800BA104C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154542B61DF9D36800BA104C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		154542951DF9D36800BA104C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1545429D1DF9D36800BA104C /* AppDelegate.swift in Sources */,
+				154542CB1DF9D3B300BA104C /* CameraViewController.swift in Sources */,
+				159674581E0736EC0026424C /* IrisCamera.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154542A91DF9D36800BA104C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154542B21DF9D36800BA104C /* IrisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154542B41DF9D36800BA104C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154542BD1DF9D36800BA104C /* IrisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		154542AF1DF9D36800BA104C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154542981DF9D36800BA104C /* Iris */;
+			targetProxy = 154542AE1DF9D36800BA104C /* PBXContainerItemProxy */;
+		};
+		154542BA1DF9D36800BA104C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154542981DF9D36800BA104C /* Iris */;
+			targetProxy = 154542B91DF9D36800BA104C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		154542A01DF9D36800BA104C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				154542A11DF9D36800BA104C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		154542A51DF9D36800BA104C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				154542A61DF9D36800BA104C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		154542BF1DF9D36800BA104C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		154542C01DF9D36800BA104C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		154542C21DF9D36800BA104C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BE387NNQP;
+				INFOPLIST_FILE = Iris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.Iris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		154542C31DF9D36800BA104C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BE387NNQP;
+				INFOPLIST_FILE = Iris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.Iris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		154542C51DF9D36800BA104C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = IrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.IrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iris.app/Iris";
+			};
+			name = Debug;
+		};
+		154542C61DF9D36800BA104C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = IrisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.IrisTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Iris.app/Iris";
+			};
+			name = Release;
+		};
+		154542C81DF9D36800BA104C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = IrisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.IrisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Iris;
+			};
+			name = Debug;
+		};
+		154542C91DF9D36800BA104C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = IrisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.IrisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Iris;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		154542941DF9D36800BA104C /* Build configuration list for PBXProject "Iris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154542BF1DF9D36800BA104C /* Debug */,
+				154542C01DF9D36800BA104C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154542C11DF9D36800BA104C /* Build configuration list for PBXNativeTarget "Iris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154542C21DF9D36800BA104C /* Debug */,
+				154542C31DF9D36800BA104C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154542C41DF9D36800BA104C /* Build configuration list for PBXNativeTarget "IrisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154542C51DF9D36800BA104C /* Debug */,
+				154542C61DF9D36800BA104C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154542C71DF9D36800BA104C /* Build configuration list for PBXNativeTarget "IrisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154542C81DF9D36800BA104C /* Debug */,
+				154542C91DF9D36800BA104C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 154542911DF9D36800BA104C /* Project object */;
+}
