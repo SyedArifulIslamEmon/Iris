@@ -11,6 +11,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="5Pc-9Q-yaK">
+            <objects>
+                <viewController id="abr-MG-0bh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lgm-OH-2jl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nh6-8O-pBd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQr-QO-u9O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OR9-UZ-dNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-628" y="139"/>
+        </scene>
         <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -33,6 +51,9 @@
                                     <constraint firstAttribute="width" secondItem="Aqb-fH-cXy" secondAttribute="height" multiplier="1:1" id="R0d-Z6-vaE"/>
                                 </constraints>
                                 <state key="normal" image="Results"/>
+                                <connections>
+                                    <segue destination="abr-MG-0bh" kind="show" identifier="pushToCloset" id="u1V-Kd-iRy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXF-uS-Xbb">
                                 <rect key="frame" x="137.5" y="542" width="100" height="100"/>
@@ -57,6 +78,9 @@
                                     <constraint firstAttribute="width" secondItem="dqo-Lk-HBb" secondAttribute="height" multiplier="1:1" id="CsX-h2-Rrd"/>
                                 </constraints>
                                 <state key="normal" image="Settings"/>
+                                <connections>
+                                    <segue destination="V6r-ao-3mu" kind="show" identifier="pushToSettings" id="T3T-DA-Gvf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,6 +114,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2wV-w2-lv7">
+            <objects>
+                <viewController id="V6r-ao-3mu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cgq-eh-PRF"/>
+                        <viewControllerLayoutGuide type="bottom" id="7mk-Bf-iNa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zsE-E4-eYv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1M-UF-0uF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="-535"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yt2-yV-Zg7">
