@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1545429D1DF9D36800BA104C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545429C1DF9D36800BA104C /* AppDelegate.swift */; };
-		1545429F1DF9D36800BA104C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545429E1DF9D36800BA104C /* ViewController.swift */; };
 		154542A21DF9D36800BA104C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154542A01DF9D36800BA104C /* Main.storyboard */; };
 		154542A41DF9D36800BA104C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154542A31DF9D36800BA104C /* Assets.xcassets */; };
 		154542A71DF9D36800BA104C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154542A51DF9D36800BA104C /* LaunchScreen.storyboard */; };
 		154542B21DF9D36800BA104C /* IrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154542B11DF9D36800BA104C /* IrisTests.swift */; };
 		154542BD1DF9D36800BA104C /* IrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154542BC1DF9D36800BA104C /* IrisUITests.swift */; };
+		154542CB1DF9D3B300BA104C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154542CA1DF9D3B300BA104C /* CameraViewController.swift */; };
+		159674581E0736EC0026424C /* IrisCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159674571E0736EC0026424C /* IrisCamera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		154542991DF9D36800BA104C /* Iris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1545429C1DF9D36800BA104C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1545429E1DF9D36800BA104C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		154542A11DF9D36800BA104C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		154542A31DF9D36800BA104C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		154542A61DF9D36800BA104C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		154542B81DF9D36800BA104C /* IrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		154542BC1DF9D36800BA104C /* IrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrisUITests.swift; sourceTree = "<group>"; };
 		154542BE1DF9D36800BA104C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154542CA1DF9D3B300BA104C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		159674571E0736EC0026424C /* IrisCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrisCamera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				1545429C1DF9D36800BA104C /* AppDelegate.swift */,
-				1545429E1DF9D36800BA104C /* ViewController.swift */,
-				154542A01DF9D36800BA104C /* Main.storyboard */,
+				154542CE1DF9D3D700BA104C /* Storyboards */,
+				154542CC1DF9D3BE00BA104C /* Camera */,
+				154542CF1DF9D77500BA104C /* Results */,
+				154542CD1DF9D3CA00BA104C /* Models */,
 				154542A31DF9D36800BA104C /* Assets.xcassets */,
-				154542A51DF9D36800BA104C /* LaunchScreen.storyboard */,
 				154542A81DF9D36800BA104C /* Info.plist */,
 			);
 			path = Iris;
@@ -123,6 +126,39 @@
 				154542BE1DF9D36800BA104C /* Info.plist */,
 			);
 			path = IrisUITests;
+			sourceTree = "<group>";
+		};
+		154542CC1DF9D3BE00BA104C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				159674571E0736EC0026424C /* IrisCamera.swift */,
+				154542CA1DF9D3B300BA104C /* CameraViewController.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		154542CD1DF9D3CA00BA104C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		154542CE1DF9D3D700BA104C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				154542A51DF9D36800BA104C /* LaunchScreen.storyboard */,
+				154542A01DF9D36800BA104C /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		154542CF1DF9D77500BA104C /* Results */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Results;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +229,7 @@
 				TargetAttributes = {
 					154542981DF9D36800BA104C = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3BE387NNQP;
 						ProvisioningStyle = Automatic;
 					};
 					154542AC1DF9D36800BA104C = {
@@ -259,8 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1545429F1DF9D36800BA104C /* ViewController.swift in Sources */,
 				1545429D1DF9D36800BA104C /* AppDelegate.swift in Sources */,
+				154542CB1DF9D3B300BA104C /* CameraViewController.swift in Sources */,
+				159674581E0736EC0026424C /* IrisCamera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BE387NNQP;
 				INFOPLIST_FILE = Iris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.Iris;
@@ -422,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BE387NNQP;
 				INFOPLIST_FILE = Iris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EricWang.Iris;
@@ -503,6 +543,7 @@
 				154542C31DF9D36800BA104C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		154542C41DF9D36800BA104C /* Build configuration list for PBXNativeTarget "IrisTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +552,7 @@
 				154542C61DF9D36800BA104C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		154542C71DF9D36800BA104C /* Build configuration list for PBXNativeTarget "IrisUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +561,7 @@
 				154542C91DF9D36800BA104C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
