@@ -9,25 +9,21 @@
 import UIKit
 import AVFoundation
 
-enum Status: Int {
-    case preview, still, error
-}
-
-class CameraViewController: UIViewController, IrisCameraDelegate {
+class CameraViewController: UIViewController {
     
     @IBOutlet weak var capturePhotoButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var cameraPreviewView: UIView! // area for previewing camera image
     
+    // AVCapture variables used in custom camera
+    var session: AVCaptureSession!
+    var output: AVCaptureStillImageOutput!
+    var input: AVCaptureDeviceInput!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var captureDevice: AVCaptureDevice!
     
     var image: UIImage? // image captured by camera
-    
-    var camera: IrisCamera? // camera object
-    var status: Status = .preview
-    
-    var isBackCamera = true
     
     override var prefersStatusBarHidden: Bool { return true } // hides status bar on the camera 
 
@@ -41,60 +37,81 @@ class CameraViewController: UIViewController, IrisCameraDelegate {
     }
     
     /**
-        Set up the preview layer of our camera,
-        which will depend on which orientation
-        our camera object currently has (rear vs front)
+        Set up the preview layer of our camera
     */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.setupCameraPreviewView()
+        previewLayer.frame = cameraPreviewView.bounds
     }
     
     /**
         This is where we instantiate our camera object
     */
     func setupCustomCamera() {
-        self.camera = IrisCamera(sender: self)
-    }
-    
-    func setupCameraPreviewView() {
-        self.previewLayer = AVCaptureVideoPreviewLayer(session: self.camera?.session)
-        self.previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        self.previewLayer?.frame = self.cameraPreviewView.bounds
-        self.cameraPreviewView.layer.addSublayer(self.previewLayer)
+        session = AVCaptureSession()
+        session.sessionPreset = AVCaptureSessionPresetPhoto
+        
+        captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        var error: NSError?
+        
+        do {
+            input = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let captureError as NSError {
+            error = captureError
+            input = nil
+            print(error?.localizedDescription ?? "Could not start camera")
+        }
+        
+        if error == nil && session.canAddInput(input) {
+            session.addInput(input)
+            output = AVCaptureStillImageOutput()
+            output.outputSettings = [ AVVideoCodecKey : AVVideoCodecJPEG ]
+            
+            if session.canAddOutput(output) {
+                session.addOutput(output)
+                
+                previewLayer = AVCaptureVideoPreviewLayer(session: session)
+                previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+                previewLayer.connection.videoOrientation = AVCaptureVideoOrientation.portrait
+                
+                cameraPreviewView.layer.insertSublayer(previewLayer, at: 0)
+                session.startRunning()
+            }
+        }
     }
     
     // MARK - Camera Actions
     @IBAction func capturePhoto(_ sender: UIButton) {
+        guard let connection = output.connection(withMediaType: AVMediaTypeVideo) else { return }
+        connection.videoOrientation = .portrait
         
-    }
-    
-    @IBAction func rotateCamera(_ sender: UIButton) {
-        self.camera = nil
-        
-        self.setupCustomCamera()
-        
-        if isBackCamera == true {
-            isBackCamera = false
-            self.camera?.cameraCheck = CameraMode.front
-        }else{
-            isBackCamera = true
-            self.camera?.cameraCheck = CameraMode.back
+        output.captureStillImageAsynchronously(from: connection) { (sampleBuffer, error) in
+            guard sampleBuffer != nil && error == nil else { return }
+            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+            
+            self.image = UIImage(data: imageData!)
+            
         }
+    }
+    
+    @IBAction func toggleFlash(_ sender: UIButton) {
+        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
-        self.setupCameraPreviewView()
-    }
-    
-    // MARK - Camera Configuration 
-    func cameraSessionConfigurationDidComplete() {
-        self.camera?.startCamera()
-    }
-    
-    func cameraSessionDidBegin() {
-
-    }
-    
-    func cameraSessionDidStop() {
-    
+        if (device?.hasFlash)! {
+            do {
+                try device?.lockForConfiguration()
+                
+                if (device?.flashMode == AVCaptureFlashMode.on) {
+                    device?.flashMode = AVCaptureFlashMode.off
+                    self.flashButton.setImage(UIImage(named: "Flash"), for: .normal)
+                } else {
+                    device?.flashMode = AVCaptureFlashMode.on
+                    self.flashButton.setImage(UIImage(named: "FlashActive"), for: .normal)
+                }
+                device?.unlockForConfiguration()
+            } catch {
+                print(error)
+            }
+        }
     }
 }

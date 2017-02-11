@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Closet View Controller-->
         <scene sceneID="5Pc-9Q-yaK">
             <objects>
-                <viewController id="abr-MG-0bh" sceneMemberID="viewController">
+                <viewController id="abr-MG-0bh" customClass="ClosetViewController" customModule="Iris" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lgm-OH-2jl"/>
                         <viewControllerLayoutGuide type="bottom" id="Nh6-8O-pBd"/>
@@ -22,7 +22,7 @@
                     <view key="view" contentMode="scaleToFill" id="aQr-QO-u9O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.246533856" green="0.37959720850000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OR9-UZ-dNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwJ-jn-aIq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqb-fH-cXy">
                                 <rect key="frame" x="23" y="605" width="35" height="35"/>
@@ -71,6 +71,9 @@
                                     <constraint firstAttribute="width" secondItem="Odf-Zl-jah" secondAttribute="height" multiplier="1:1" id="T9T-O9-6yW"/>
                                 </constraints>
                                 <state key="normal" image="Flash"/>
+                                <connections>
+                                    <action selector="toggleFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UNv-9p-ZbL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqo-Lk-HBb">
                                 <rect key="frame" x="322" y="41" width="30" height="30"/>
@@ -115,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="2wV-w2-lv7">
             <objects>
-                <viewController id="V6r-ao-3mu" sceneMemberID="viewController">
+                <viewController id="V6r-ao-3mu" customClass="SettingsViewController" customModule="Iris" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cgq-eh-PRF"/>
                         <viewControllerLayoutGuide type="bottom" id="7mk-Bf-iNa"/>
@@ -126,17 +129,17 @@
                     <view key="view" contentMode="scaleToFill" id="zsE-E4-eYv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.25901208819999999" blue="0.058080518400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1M-UF-0uF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="854" y="-535"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="yt2-yV-Zg7">
             <objects>
-                <viewController id="evA-Wm-SyZ" sceneMemberID="viewController">
+                <viewController id="evA-Wm-SyZ" customClass="ResultsViewController" customModule="Iris" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kmf-V4-fQv"/>
                         <viewControllerLayoutGuide type="bottom" id="VXG-nT-hyk"/>
