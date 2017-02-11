@@ -17,7 +17,7 @@ class CameraViewController: UIViewController, IrisCameraDelegate {
     
     @IBOutlet weak var capturePhotoButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
-    @IBOutlet weak var rotateButton: UIButton! 
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var cameraPreviewView: UIView! // area for previewing camera image
     
     var previewLayer: AVCaptureVideoPreviewLayer!
