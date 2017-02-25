@@ -25,6 +25,8 @@ class CameraViewController: UIViewController {
     
     var image: UIImage? // image captured by camera
     
+    let transitionManager = TransitionManager() 
+    
     override var prefersStatusBarHidden: Bool { return true } // hides status bar on the camera 
 
     /**
@@ -84,7 +86,10 @@ class CameraViewController: UIViewController {
         }
     }
     
-    // MARK - Camera Actions
+    // MARK: - Unwind Segue
+    @IBAction func unwindToCamera(segue: UIStoryboardSegue) {}
+    
+    // MARK: - Camera Actions
     @IBAction func capturePhoto(_ sender: UIButton) {
         guard let connection = output.connection(withMediaType: AVMediaTypeVideo) else { return }
         connection.videoOrientation = .portrait
@@ -118,4 +123,17 @@ class CameraViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - IBAction 
+    @IBAction func pushToCloset(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "pushToCloset", sender: self)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let toViewController = segue.destination as! ClosetViewController
+        toViewController.transitioningDelegate = self.transitionManager
+    }
+    
+    
 }

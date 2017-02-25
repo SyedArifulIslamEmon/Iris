@@ -52,7 +52,6 @@ class ClosetViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     // MARK: - IBAction
     @IBAction func returnToCamera(_ sender: UIBarButtonItem) {
-        print("returning to camera")
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "unwindToCamera", sender: self)
     }
 }

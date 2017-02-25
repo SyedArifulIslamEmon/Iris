@@ -109,9 +109,11 @@
                     <connections>
                         <outlet property="closetCollectionView" destination="RlQ-Ea-z1m" id="2rf-TP-6fd"/>
                         <outlet property="closetNavigationBar" destination="aM9-bG-Cqe" id="6nh-XH-X1N"/>
+                        <segue destination="iHG-hY-MOA" kind="unwind" identifier="unwindToCamera" unwindAction="unwindToCameraWithSegue:" id="xHd-Y3-R2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OR9-UZ-dNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iHG-hY-MOA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-7" y="139"/>
         </scene>
@@ -138,7 +140,7 @@
                                 </constraints>
                                 <state key="normal" image="Results"/>
                                 <connections>
-                                    <segue destination="abr-MG-0bh" kind="show" identifier="pushToCloset" id="u1V-Kd-iRy"/>
+                                    <action selector="pushToCloset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9EY-xY-hPv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXF-uS-Xbb">
@@ -199,6 +201,7 @@
                         <outlet property="flashButton" destination="Odf-Zl-jah" id="8xh-08-Tmt"/>
                         <outlet property="settingsButton" destination="dqo-Lk-HBb" id="7nc-Su-1Ex"/>
                         <segue destination="evA-Wm-SyZ" kind="show" identifier="processImage" id="Y3D-1U-7Ya"/>
+                        <segue destination="abr-MG-0bh" kind="show" identifier="pushToCloset" id="VRl-yp-Dbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
