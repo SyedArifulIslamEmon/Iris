@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransitionManager : NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
+class TransitionManager : UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
     var isPresenting = false
     

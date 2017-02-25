@@ -25,7 +25,8 @@ class CameraViewController: UIViewController {
     
     var image: UIImage? // image captured by camera
     
-    let transitionManager = TransitionManager() 
+    let transitionManager = TransitionManager()
+    let swipeInteractionController = SwipeInteractionController()
     
     override var prefersStatusBarHidden: Bool { return true } // hides status bar on the camera 
 
@@ -44,10 +45,6 @@ class CameraViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer.frame = cameraPreviewView.bounds
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false 
     }
     
     /**
@@ -84,6 +81,26 @@ class CameraViewController: UIViewController {
                 session.startRunning()
             }
         }
+    }
+    
+    // MARK: - Pan Gesture Recognizer 
+    func handlePanGesture(gestureRecognizer: UIPanGestureRecognizer) {
+        let viewTranslation = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
+        switch gestureRecognizer.state {
+        case .began:
+            break
+        case .changed:
+            break
+        case .cancelled, .ended:
+            break
+        default:
+            break
+        }
+    }
+    
+    // MARK: - Swipe Interaction
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return swipeInteractionController.interactionInProgress ? swipeInteractionController : nil
     }
     
     // MARK: - Unwind Segue
@@ -124,7 +141,7 @@ class CameraViewController: UIViewController {
         }
     }
     
-    // MARK: - IBAction 
+    // MARK: - IBAction
     @IBAction func pushToCloset(_ sender: UIButton) {
         self.performSegue(withIdentifier: "pushToCloset", sender: self)
     }
@@ -133,7 +150,6 @@ class CameraViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let toViewController = segue.destination as! ClosetViewController
         toViewController.transitioningDelegate = self.transitionManager
+        swipeInteractionController.wireToViewController(viewController: toViewController, swipeDirectionLeft: false)
     }
-    
-    
 }

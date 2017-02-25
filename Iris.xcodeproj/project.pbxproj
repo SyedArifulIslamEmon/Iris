@@ -19,6 +19,7 @@
 		15512EDC1E4EBDAF004E7DBE /* ClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15512EDB1E4EBDAF004E7DBE /* ClosetViewController.swift */; };
 		157584A41E621C6D008C2E0E /* ClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157584A31E621C6D008C2E0E /* ClosetCollectionViewCell.swift */; };
 		157584A61E622CDC008C2E0E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157584A51E622CDC008C2E0E /* TransitionManager.swift */; };
+		157584A81E623C00008C2E0E /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157584A71E623C00008C2E0E /* SwipeInteractionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		15512EDB1E4EBDAF004E7DBE /* ClosetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetViewController.swift; sourceTree = "<group>"; };
 		157584A31E621C6D008C2E0E /* ClosetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosetCollectionViewCell.swift; sourceTree = "<group>"; };
 		157584A51E622CDC008C2E0E /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		157584A71E623C00008C2E0E /* SwipeInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				1545429C1DF9D36800BA104C /* AppDelegate.swift */,
 				157584A51E622CDC008C2E0E /* TransitionManager.swift */,
+				157584A71E623C00008C2E0E /* SwipeInteractionController.swift */,
 				154542CD1DF9D3CA00BA104C /* Models */,
 				154542CE1DF9D3D700BA104C /* Storyboards */,
 				15512ED51E4EBD7F004E7DBE /* Settings */,
@@ -330,6 +333,7 @@
 				157584A41E621C6D008C2E0E /* ClosetCollectionViewCell.swift in Sources */,
 				154542CB1DF9D3B300BA104C /* CameraViewController.swift in Sources */,
 				15512ED81E4EBD92004E7DBE /* SettingsViewController.swift in Sources */,
+				157584A81E623C00008C2E0E /* SwipeInteractionController.swift in Sources */,
 				15512EDA1E4EBDA9004E7DBE /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
