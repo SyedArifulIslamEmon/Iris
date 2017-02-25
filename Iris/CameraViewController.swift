@@ -44,6 +44,10 @@ class CameraViewController: UIViewController {
         previewLayer.frame = cameraPreviewView.bounds
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false 
+    }
+    
     /**
         This is where we instantiate our camera object
     */
