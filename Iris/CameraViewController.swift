@@ -117,6 +117,9 @@ class CameraViewController: UIViewController {
             
             self.image = UIImage(data: imageData!)
             
+            // TODO: show loading screen
+            self.performSegue(withIdentifier: "processImage", sender: self)
+            
         }
     }
     
@@ -148,8 +151,10 @@ class CameraViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let toViewController = segue.destination as! ClosetViewController
-        toViewController.transitioningDelegate = self.transitionManager
-        swipeInteractionController.wireToViewController(viewController: toViewController, swipeDirectionLeft: false)
+        if segue.identifier == "pushToCloset" {
+            let toViewController = segue.destination as! ClosetViewController
+            toViewController.transitioningDelegate = self.transitionManager
+            swipeInteractionController.wireToViewController(viewController: toViewController, swipeDirectionLeft: false)
+        }
     }
 }
