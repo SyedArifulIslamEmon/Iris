@@ -27,7 +27,6 @@ class CameraViewController: UIViewController {
     
     // manage view controller transitions
     let transitionManager = TransitionManager()
-    let swipeInteractionController = SwipeInteractionController()
     
     // loading view 
     var loadingView: IrisLoadingView? = nil
@@ -48,6 +47,8 @@ class CameraViewController: UIViewController {
     */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        transitionManager.viewController = self
+        transitionManager.isCamera = true
         previewLayer.frame = cameraPreviewView.bounds
     }
     
@@ -109,11 +110,6 @@ class CameraViewController: UIViewController {
         }
     }
     
-    // MARK: - Swipe Interaction
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return swipeInteractionController.interactionInProgress ? swipeInteractionController : nil
-    }
-    
     // MARK: - Unwind Segue
     @IBAction func unwindToCamera(segue: UIStoryboardSegue) {}
     
@@ -167,7 +163,9 @@ class CameraViewController: UIViewController {
         if segue.identifier == "pushToCloset" {
             let toViewController = segue.destination as! ClosetViewController
             toViewController.transitioningDelegate = self.transitionManager
-            swipeInteractionController.wireToViewController(viewController: toViewController, swipeDirectionLeft: false)
+            self.transitionManager.viewController = toViewController
+            self.transitionManager.isCamera = false
+            self.transitionManager.isPresenting = true 
         }
     }
 }

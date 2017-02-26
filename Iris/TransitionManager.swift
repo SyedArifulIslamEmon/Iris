@@ -10,7 +10,43 @@ import UIKit
 
 class TransitionManager : UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
+    private var interactive = false
+    var isCamera = false
     var isPresenting = false
+    
+    private var panGesture: UIPanGestureRecognizer!
+    
+    var viewController: UIViewController! {
+        didSet {
+            self.panGesture = UIPanGestureRecognizer()
+            self.panGesture?.addTarget(self, action: #selector(handlePanGesture(gestureRecognizer:)))
+            self.viewController.view.addGestureRecognizer(panGesture!)
+        }
+    }
+    
+    func handlePanGesture(gestureRecognizer: UIPanGestureRecognizer) {
+        let translation = gestureRecognizer.translation(in: gestureRecognizer.view)
+        let d = translation.x / gestureRecognizer.view!.bounds.width * 0.5
+        
+        switch gestureRecognizer.state {
+        case .began:
+            self.interactive = true
+            
+            if isCamera {
+                self.viewController.performSegue(withIdentifier: "pushToCloset", sender: self)
+            } else {
+                self.viewController.performSegue(withIdentifier: "unwindToCamera", sender: self)
+            }
+            
+            break
+        case .changed:
+            self.update(d)
+            break
+        default:
+            self.interactive = false
+            self.finish()
+        }
+    }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
@@ -31,7 +67,7 @@ class TransitionManager : UIPercentDrivenInteractiveTransition, UIViewController
         
         let duration = self.transitionDuration(using: transitionContext)
         
-        UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: { 
+        UIView.animate(withDuration: duration, delay: 0.0, options: [], animations: {
             if self.isPresenting {
                 fromView.transform = offScreenRight
             } else {
@@ -56,5 +92,14 @@ class TransitionManager : UIPercentDrivenInteractiveTransition, UIViewController
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = false
         return self
+    }
+    
+    // MARK: Interactive Delegate
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactive ? self : nil
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactive ? self : nil
     }
 }

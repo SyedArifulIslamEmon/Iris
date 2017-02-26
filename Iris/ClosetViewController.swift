@@ -19,6 +19,7 @@ class ClosetViewController: UIViewController, UICollectionViewDelegate, UICollec
         closetCollectionView.delegate = self
         closetCollectionView.dataSource = self
         closetCollectionView.showsVerticalScrollIndicator = false
+        closetCollectionView.isUserInteractionEnabled = false 
     }
     
     // MARK: - UICollectionView Methods 
