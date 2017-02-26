@@ -20,6 +20,8 @@ class ResultsViewController: UIViewController, UICollectionViewDelegate, UIColle
         resultsCollectionView.showsHorizontalScrollIndicator = false
     }
     
+
+    
     // MARK: - UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let reuseIdentifier = "resultsCell"

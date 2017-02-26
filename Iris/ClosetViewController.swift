@@ -13,6 +13,8 @@ class ClosetViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var closetNavigationBar: UINavigationBar!
     @IBOutlet weak var closetCollectionView: UICollectionView!
     
+    var transitionManager: TransitionManager?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     override func viewDidLoad() {
@@ -20,6 +22,11 @@ class ClosetViewController: UIViewController, UICollectionViewDelegate, UICollec
         closetCollectionView.dataSource = self
         closetCollectionView.showsVerticalScrollIndicator = false
         closetCollectionView.isUserInteractionEnabled = false 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        transitionManager?.viewController = self
+        transitionManager?.isCamera = false 
     }
     
     // MARK: - UICollectionView Methods 

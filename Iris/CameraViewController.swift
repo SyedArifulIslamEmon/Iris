@@ -163,9 +163,7 @@ class CameraViewController: UIViewController {
         if segue.identifier == "pushToCloset" {
             let toViewController = segue.destination as! ClosetViewController
             toViewController.transitioningDelegate = self.transitionManager
-            self.transitionManager.viewController = toViewController
-            self.transitionManager.isCamera = false
-            self.transitionManager.isPresenting = true 
+            toViewController.transitionManager = self.transitionManager
         }
     }
 }
