@@ -25,8 +25,12 @@ class CameraViewController: UIViewController {
     
     var image: UIImage? // image captured by camera
     
+    // manage view controller transitions
     let transitionManager = TransitionManager()
     let swipeInteractionController = SwipeInteractionController()
+    
+    // loading view 
+    var loadingView: IrisLoadingView? = nil
     
     override var prefersStatusBarHidden: Bool { return true } // hides status bar on the camera 
 
@@ -83,6 +87,13 @@ class CameraViewController: UIViewController {
         }
     }
     
+    func showLoadingView() {
+        self.loadingView = IrisLoadingView()
+        loadingView?.modalTransitionStyle = .crossDissolve
+        loadingView?.modalPresentationStyle = .overFullScreen
+        self.present(loadingView!, animated: true, completion: nil)
+    }
+    
     // MARK: - Pan Gesture Recognizer 
     func handlePanGesture(gestureRecognizer: UIPanGestureRecognizer) {
         let viewTranslation = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
@@ -117,9 +128,11 @@ class CameraViewController: UIViewController {
             
             self.image = UIImage(data: imageData!)
             
-            // TODO: show loading screen
-            self.performSegue(withIdentifier: "processImage", sender: self)
-            
+            // TODO: - HERE'S WHERE WE PROCESS THE IMAGE
+            self.showLoadingView()
+            self.loadingView?.dismissLoadingScreen(completion: { 
+                self.performSegue(withIdentifier: "processImage", sender: self)
+            })
         }
     }
     
